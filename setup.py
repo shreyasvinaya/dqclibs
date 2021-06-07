@@ -102,8 +102,8 @@ setup(
     package_data={module_name: ["_version.txt"]},
     python_requires=">=3.7",
     install_requires=[
-        "numpy>=1.8.2",
-        "scipy>=0.15",
+        # "numpy>=1.8.2",
+        # "scipy>=0.15",
     ],
     ext_modules=[CMakeExtension(ext_name, '')],
     cmdclass={'build_ext': CMakeBuildExt},
