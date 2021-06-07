@@ -1,2 +1,2 @@
 # dqclibs
-Libraries for DQC
+Libraries for DQC, from PySCF's libraries.
