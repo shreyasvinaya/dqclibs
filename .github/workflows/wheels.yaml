@@ -96,10 +96,6 @@ jobs:
           python -c "print('dqclibs==', end='')" > dqclibsreqs.txt
           python dqclibs/_version.py >> dqclibsreqs.txt
 
-      - name: Install test requirements
-        run: |
-          python -m pip install -r test-requirements.txt
-
       - name: Install from TestPyPI
         run: |
           python .github/workflows/wheels_install_test_pypi.py
