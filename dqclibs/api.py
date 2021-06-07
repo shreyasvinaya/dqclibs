@@ -2,7 +2,6 @@ import os
 import sys
 import ctypes
 import ctypes.util
-import numpy as np
 from typing import Callable, Dict, Any
 
 __all__ = ["CINT", "CGTO", "CPBC", "CSYMM"]
