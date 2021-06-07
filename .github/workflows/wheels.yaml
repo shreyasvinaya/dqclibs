@@ -107,9 +107,9 @@ jobs:
       - name: Run a single test
         # not using pytest because pytest imports dqc from the local directory
         run: |
-          cd dqc/test/
+          cd dqclibs/tests/
           python -c "import dqclibs; print(dqclibs.__file__)"
-          # python test_ks.py
+          python test_libs.py
           cd ../../
 
   publish:
