@@ -37,12 +37,9 @@ jobs:
           CIBW_BEFORE_BUILD_LINUX: yum install -y openblas-devel.x86_64 gcc
           CIBW_BEFORE_BUILD_MACOS: brew install openblas gcc
           CIBW_ARCHS: x86_64
-          CIBW_BUILD: cp38-*
+          CIBW_BUILD: cp3*-*
           CIBW_BUILD_VERBOSITY: 3
-          CIBW_ENVIRONMENT: "DQC_BUILD=1"
           CIBW_REPAIR_WHEEL_COMMAND_LINUX: auditwheel -v repair -w {dest_dir} {wheel}
-          # CIBW_BEFORE_TEST: python -m pip install pytest
-          # CIBW_TEST_COMMAND: python {project}/dqc/test/test_ks.py
 
       - uses: actions/upload-artifact@v2
         with:
@@ -75,7 +72,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04, macOS-10.15]
-        python-version: [3.8]
+        python-version: [3.7, 3.8, 3.9]
       fail-fast: false
     env:
       DQC_BUILD: 1
