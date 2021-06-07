@@ -9,11 +9,11 @@ __all__ = ["CINT", "CGTO", "CPBC", "CSYMM"]
 
 # libraries
 _ext = "dylib" if sys.platform == "darwin" else "so"
-_libcint_relpath = os.path.join("libs", f"libcint.{_ext}")
-_libcgto_relpath = os.path.join("libs", f"libcgto.{_ext}")
-_libcpbc_relpath = os.path.join("libs", f"libpbc.{_ext}")
-# _libcvhf_relpath = os.path.join("libs", f"libcvhf.{_ext}")
-_libcsymm_relpath = os.path.join("libs", f"libsymm.{_ext}")
+_libcint_relpath = f"libcint.{_ext}"
+_libcgto_relpath = f"libcgto.{_ext}"
+_libcpbc_relpath = f"libpbc.{_ext}"
+# _libcvhf_relpath = f"libcvhf.{_ext}"
+_libcsymm_relpath = f"libsymm.{_ext}"
 
 _libs: Dict[str, Any] = {}
 

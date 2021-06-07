@@ -92,9 +92,9 @@ jobs:
 
       - name: Get versioning
         run: |
-          python dqc/_version.py
+          python dqclibs/_version.py
           python -c "print('dqclibs==', end='')" > dqclibsreqs.txt
-          python dqc/_version.py >> dqclibsreqs.txt
+          python dqclibs/_version.py >> dqclibsreqs.txt
 
       - name: Install test requirements
         run: |
