@@ -3,5 +3,5 @@ This lib directory contains libraries from PySCF. The modifications made:
 * In the code generator, added:
   * Higher derivatives for nabla (nabla^2, nabla^3)
   * Laplacian (nabla dot nabla) and the derivatives of it
-* Modified CMakeLists.txt to always set (OpenMP_C_FLAGS " "), to avoid MP clashes
-  * Previous value was setting (HAVE_OPENMP 1) if OPENMP_FOUND
+* Modified CMakeLists.txt to have (OpenMP_C_FLAGS " ") if not setting option USE_OPENMP to ON
+  * Turn on OpenMP with -DUSE_OPENMP=ON

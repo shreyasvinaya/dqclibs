@@ -38,6 +38,8 @@ endif()
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+option(USE_OPENMP "Use OpenMP for library compilation" OFF)
+
 # Architecture specified cmake flags.  See also the templates in
 # pyscf/lib/cmake_arch_config
 if(EXISTS "${PROJECT_SOURCE_DIR}/cmake.arch.inc")
@@ -57,7 +59,12 @@ endif()
 
 find_package(OpenMP)
 if(OPENMP_FOUND)
-  set(OpenMP_C_FLAGS " ")
+  if(USE_OPENMP)
+    set(HAVE_OPENMP 1)
+  else ()
+    set(OpenMP_C_FLAGS " ")
+  endif()
+  message(STATUS "Using OpenMP ${USE_OPENMP}")
 else ()
   set(OpenMP_C_FLAGS " ")
 endif()
